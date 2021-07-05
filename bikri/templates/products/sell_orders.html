@@ -1,0 +1,27 @@
+{% extends 'bikri/navbar.html' %}
+
+{% block body %}
+<div class="container mx-3">
+<h4 class="header mt-3" style="font-family:monospace;">Your Orders</h4>
+<table class="table table-bordered shadow-lg mx-4">
+    <thead >
+        <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Date</th>
+        </tr>
+    </thead>
+    <tbody>
+{% for data1 in data  %}
+{% for data2 in data1 %}
+<tr>
+    <td><a class="text-decoration-none" href="{% url 'products:view_product_single' data2.product_id %}">{{data2.product_id}}</a></td>
+    <td><h6 class="font-weight-bold">{{data2.qty}}</h6></td>
+    <td><h6 class="font-weight-bold">{{data2.date_time}}</h6></td>
+</tr>
+{% endfor %}
+{% endfor %}
+</tbody>
+</table>
+</div>
+{% endblock %}

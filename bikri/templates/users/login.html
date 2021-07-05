@@ -1,0 +1,28 @@
+{% extends 'bikri/navbar.html'%}
+
+{% block body %}
+<div class="container">
+<div class="row mt-3 justify-content-center">
+    <div class="col-md-3">
+        <img src="https://i.ibb.co/pbmLXXp/dog.png" style="border-radius:10px; max-width: 300px;max-height: 600px;">
+    </div>
+    
+
+    <div class="col-md-3 d-flex justify-content-center text-center m-3">
+    <div class="card m-4 px-4">
+    <form method="POST" class="card-body">
+    {% csrf_token %}
+    <input class="form-control m-3" type="text" placeholder="Username:" autocomplete="off" name="username">
+    <input class="form-control m-3" type="password" placeholder="Password:" name="password">
+    <input class="btn btn-primary m-3" type="submit" value="Login"> 
+</div>
+</form>
+</div>
+<div class="col-md-3">
+    <img src="https://i.ibb.co/pbmLXXp/dog.png" style="border-radius:10px; max-width: 300px;max-height: 600px;">
+</div>
+
+</div>
+</div>
+{% endblock %}
+

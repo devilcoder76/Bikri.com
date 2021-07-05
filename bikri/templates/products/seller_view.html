@@ -1,0 +1,17 @@
+{% extends 'bikri/navbar.html' %}
+
+{% block body %}
+<div class="container">
+<div class="row mt-4 text-center">
+{% for data in all_products %}
+    <div class="card col-md-3 m-2">
+<a class="text-decoration-none" href="{% url 'products:view_product_single' data.id %}"><img class="rounded img-thumbnail my-2" style="height: 100px ; max-width: 50%; object-fit: contain;"src={{data.image.url}}>
+    <h6>{{data.title}}</h6>
+    <h6>{{data.price}}</h6>
+</a>
+<a class="btn btn-xs-sm btn-outline-danger" href="#">Orders</a>
+</div>
+{% endfor %}
+</div>
+</div>
+{% endblock %}

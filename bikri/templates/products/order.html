@@ -1,0 +1,28 @@
+{% extends 'bikri/navbar.html'%}
+{% block body %}
+<style>
+    h5{
+        font-family: sans-serif;
+    }
+</style>
+<div class="row">
+<div class="col-md-5 m-3 ">
+<div class="card">
+<div class="card-body">
+    <div class="text-center">
+    <img class="rounded " src="{{data.image.url}}" style="width:240px;height:300px; object-fit:contain;">
+    </div>
+<h5 class="font-weight-bold m-2" >Item : {{data.title}}</h5>
+
+<h5 class="font-weight-bold m-2">Price : Rs. {{data.price}}</h5>
+<h5 class="font-weight-bold mt-5">Enter Quantity</h5>
+<form class="form-group" method="POST">
+    {% csrf_token %}
+<input class="form-control my-3" type="text" placeholder="Quantity" value=1 name="qty" style="max-width: 20%;">
+<input class="btn btn-info my-3" type="submit" value="Confirm">
+</form>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
